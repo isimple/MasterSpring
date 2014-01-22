@@ -28,14 +28,14 @@ public class UserService {
     public User findUserByUserName(String userName){
         return userDao.findUserByUserName(userName);
     }
-    public void loginSuccess(User user){
+    public void loginSuccess(User user) {
         user.setCredits(user.getCredits() + 5);
         LoginLog loginLog = new LoginLog();
         loginLog.setUserId(user.getUserId());
         loginLog.setIp(user.getLastIp());
         loginLog.setLoginDate(user.getLastVisit());
-        userDao.updateLoginInfo(user);
         loginLogDao.insertLoginLog(loginLog);
+        userDao.updateLoginInfo(user);
     }
 
 }
