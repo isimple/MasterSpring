@@ -9,7 +9,8 @@
 
     <!--启动的时候就启动spring容器,结合log4j.properties为自动启动日志-->
     <context-param>
-        <!--可以通过逗号和空格分隔-->
+        <!--可以通过逗号、分号和空格分隔-->
+        <!--也可以指定log4j的配置文件但是要比spring配置文件先加载P65-->
         <param-name>contextConfigLocation</param-name>
         <param-value>classpath:applicationContext.xml</param-value>
     </context-param>
